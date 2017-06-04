@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".MediaService"
+            android:name=".services.MediaService"
             android:stopWithTask="true"/>
     </application>
 

@@ -8,6 +8,11 @@ import com.dhananjay.oaudioplayer.model.MediaItem;
 
 import java.util.ArrayList;
 
+/**
+ * Activity for signing in existing users extends {@link BaseActivity}
+ *
+ * @author Dhananjay Kumar
+ */
 public class MainActivity extends BaseActivity {
     // ArrayList of MediaItems for playlist
     private static final ArrayList<MediaItem> sSamplePlaylist = new ArrayList<>();

@@ -9,11 +9,16 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.dhananjay.oaudioplayer.MediaService;
+import com.dhananjay.oaudioplayer.services.MediaService;
 import com.dhananjay.oaudioplayer.model.MediaItem;
 
 import java.util.ArrayList;
 
+/**
+ * Base Activity class for all other activities containing common functionality extends {@link AppCompatActivity}
+ *
+ * @author Dhananjay Kumar
+ */
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = BaseActivity.class.getSimpleName();
     private boolean mServiceBound = false;
@@ -39,6 +44,12 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Creates {@link MediaService} {@link Intent} with provided playlist
+     *
+     * @param sSamplePlaylist Arraylist of {@link MediaItem} for playlist
+     * @return MediaService intent
+     */
     protected Intent getMediaServiceIntent(ArrayList<MediaItem> sSamplePlaylist) {
         if (serviceIntent == null)
             serviceIntent = MediaService.createPlaylistIntent(this, sSamplePlaylist);
@@ -58,12 +69,18 @@ public class BaseActivity extends AppCompatActivity {
         connectToService();
     }
 
+    /**
+     * binds the {@link MediaService}
+     */
     private void connectToService() {
         Log.d(TAG, "connectToService()");
         Intent intent = new Intent(this, MediaService.class);
         bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
+    /**
+     * Unbinds the {@link MediaService}
+     */
     private void unbindService() {
         if (mServiceBound) {
             Log.d(TAG, "unbindService()");

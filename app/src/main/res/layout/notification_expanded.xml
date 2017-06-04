@@ -7,39 +7,40 @@
     >
 
     <ImageView
-        android:id="@+id/track_image"
+        android:id="@+id/iv_track_image"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        />
+        android:src="@drawable/ic_music"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
 
     <TextView
-        android:id="@+id/track_title"
+        android:id="@+id/tv_track_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/track_controls"
-        android:layout_alignTop="@id/track_image"
-        android:layout_toLeftOf="@+id/media_quit"
-        android:layout_toRightOf="@+id/track_image"
+        android:layout_above="@id/ll_track_controls"
+        android:layout_alignTop="@id/iv_track_image"
+        android:layout_toLeftOf="@+id/ib_media_quit"
+        android:layout_toRightOf="@+id/iv_track_image"
         android:gravity="center_vertical"
         android:paddingLeft="24dp"
-        android:text="Vocal Trance"
         android:textAppearance="?android:attr/textAppearanceLarge"
         />
 
     <LinearLayout
-        android:id="@+id/track_controls"
+        android:id="@+id/ll_track_controls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/track_image"
-        android:layout_toRightOf="@+id/track_image"
+        android:layout_alignBottom="@+id/iv_track_image"
+        android:layout_toRightOf="@+id/iv_track_image"
         android:minHeight="64dp"
         android:weightSum="3"
         >
 
         <ImageButton
-            android:id="@+id/track_prev"
+            android:id="@+id/ib_track_prev"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -54,7 +55,7 @@
             >
 
             <ImageButton
-                android:id="@+id/track_play"
+                android:id="@+id/ib_track_play"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="?android:attr/selectableItemBackground"
@@ -63,7 +64,7 @@
                 />
 
             <ProgressBar
-                android:id="@+id/track_buffering"
+                android:id="@+id/pb_track_buffering"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,7 +74,7 @@
         </FrameLayout>
 
         <ImageButton
-            android:id="@+id/track_next"
+            android:id="@+id/ib_track_next"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -83,7 +84,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/media_quit"
+        android:id="@+id/ib_media_quit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
